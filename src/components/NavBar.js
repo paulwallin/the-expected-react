@@ -1,25 +1,35 @@
 import React from "react";
-import logo from './expected_logo.svg'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
+import logo from '../expected_logo.svg'
 
-const navBar = () => {    
-      return (
-        <nav className="nav">
-          <div className="nav__container">
-            <Link to="/" className="nav__brand">
-                <img src={logo} className="app-logo" alt="logo" />
-            </Link>
 
-            <div className="nav__right">
-              <ul className="nav__item-wrapper">
-                <li className="nav__item">
-                  <Link className="nav__link" to="/path1">Link 1</Link>
-                </li>
-              </ul>
+const NavBar = () => (
+<nav className="nav">
+            <div className="nav__container">
+              <NavLink to="/home" className="nav__brand">
+                <img src={logo} className="nav__brand-logo" alt="logo" />
+              </NavLink>
+              <div className="nav__right">
+                <ul className="nav__item-wrapper">
+                  <li className="nav__item">
+                    <NavLink to="/home" className="nav__link" activeClassName="nav__link--active">
+                      home
+                    </NavLink>
+                  </li>
+                  <li className="nav__item">
+                    <NavLink to="/band" className="nav__link" activeClassName="nav__link--active">
+                      band
+                    </NavLink>
+                  </li>
+                  <li className="nav__item">
+                    <NavLink to="/gigs" className="nav__link" activeClassName="nav__link--active">
+                      gigs
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </nav>
-      );
-    }
+          </nav>
+)
 
-export default navBar 
+export default NavBar

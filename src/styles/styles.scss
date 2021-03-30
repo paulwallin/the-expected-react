@@ -11,37 +11,90 @@ body {
     -o-background-size: cover;
     background-size: cover;
     font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    font-weight: 400;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Orbitron', sans-serif;
 }
-.app-header {
- background-color: #333;
- img {
-     width: 200px;
- }
+/* =LAYOUT ****/
+.subpage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    .subpage__header {
+        padding-top: 2rem;
+        grid-column: span 6;
+        .subpage__header-h1 {
+            font-size: 4rem;
+            line-height: 1.4;
+            margin-bottom: .5rem;
+            text-shadow: 0 0.2rem 0.1rem #202923;
+            color: #ffff5a;
+            text-align: center;
+        }
+    }
+    .subpage__content {
+        grid-column: span 4;
+    }
+    .subpage__aside {
+        grid-column: span 2;
+    }
+    .subpage__footer {
+        grid-column: span 6;
+        .callout {
+            grid-column: span 3;
+        }
+    }
 }
-header {
+.app-header {
+    background-color: #202923;
     height: 60px;
-    padding: 1rem;
+    padding: 0 1rem;
 }
 .nav {
+    $self: &; 
     width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    display: inline-block;
+    padding: .5rem 0;
+    .nav__container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        align-content: center;
+    }
     .nav__brand {
         display: inline-block;
-    }
-    .nav__container {
-        display: flex;
-        align-content: space-between;
+        flex: 1;
+        .nav__brand-logo {
+            width: 200px;
+        }
     }
     .nav__item-wrapper {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        align-items: flex-start;
     }
-    .nav__item { padding: 0 10px; }
+    .nav__item {  
+        color: #ffff5a;
+    }
     
-    a { color: $white; }
+    .nav__link { 
+        color: #ffff5a; 
+        background-color: #202923;
+        padding: .7rem 1rem;
+        text-decoration: none; 
+        line-height: 1;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 600;
+        
+        &.nav__link--active { 
+            color: #202923;
+            background-color: #86bc3d;
+            text-decoration: none; 
+        }
+    }
 }
 section#home {
     display: grid;
