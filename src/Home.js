@@ -1,6 +1,7 @@
 import React from 'react'
 import NewsCallout from './components/Callouts/NewsCallout'
 import GigsCallout from './components/Callouts/GigsCallout'
+import Callout from './components/Callouts/Callout'
 import YouTube from 'react-youtube'
 
 const Home = (props) => {
@@ -15,8 +16,8 @@ const Home = (props) => {
           <YouTube videoId={'ehcGy-ltqFU'} />
         </main>
         <aside>
-          <NewsCallout />
-          <GigsCallout />
+          <Callout calloutSlug="find-our-music-on" />
+          <Callout calloutSlug="follow-us" />
         </aside>
       </section>
     </>

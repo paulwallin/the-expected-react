@@ -13,15 +13,28 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 100%;
     font-weight: 400;
+    color: $white;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Orbitron', sans-serif;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+img {
+    max-width: 100%; 
+    height: auto;
 }
 /* =LAYOUT ****/
 .subpage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-
+    gap: 1rem;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
     .subpage__header {
         padding-top: 2rem;
         grid-column: span 6;
@@ -36,9 +49,13 @@ h1, h2, h3, h4, h5, h6 {
     }
     .subpage__content {
         grid-column: span 4;
+        background-color: $black;
+        min-height: 400px;
     }
     .subpage__aside {
         grid-column: span 2;
+        background-color: $black;
+        min-height: 400px;
     }
     .subpage__footer {
         grid-column: span 6;
@@ -104,6 +121,7 @@ section#home {
     grid-template-columns: 300px 1fr 300px;
     gap: 1rem;
 }
+
 .callout {
     position: relative;
     margin: 0 0 1rem 0;
